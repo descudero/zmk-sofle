@@ -52,7 +52,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, h: '?', s: '?'}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: Shortcuts, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: Gaming, h: toggle}
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
@@ -247,7 +247,7 @@ layers:
   - Ctl+Gui+F
   - Ctl+Gui+K
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&alfred'
+  - {t: '&alfred', type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
