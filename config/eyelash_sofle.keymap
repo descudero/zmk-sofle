@@ -15,9 +15,7 @@
 #define Sym       1
 #define Nav       2
 #define Shortcuts 3
-#define Meta      4
-#define Vim       5
-#define Gaming    6
+#define Gaming    4
 
 // ─── Pointing / scroll tuning ─────────────────────────────────────────────────
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
@@ -37,7 +35,6 @@
 
 &soft_off { hold-time-ms = <2000>; };
 
-// ─── Encoder: scroll up / down on every layer ─────────────────────────────────
 / {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
@@ -46,7 +43,6 @@
         tap-ms = <100>;
     };
 
-// ─── Custom behaviours ────────────────────────────────────────────────────────
     behaviors {
 
         kp_kp: kp_kp {
@@ -88,7 +84,6 @@
         };
     };
 
-// ─── Macros ───────────────────────────────────────────────────────────────────
     macros {
 
         alfred: alfred {
@@ -122,21 +117,22 @@
         };
     };
 
-// ─── Combos ───────────────────────────────────────────────────────────────────
     combos {
         compatible = "zmk,combos";
 
-        // Q + S + Z held 2 s → deep sleep  (positions: Q=14, S=28, Z=40)
+        // Q + S + Z held 2 s → deep sleep
         softoff {
             bindings = <&soft_off>;
             key-positions = <14 28 40>;
         };
     };
 
-// ─── Keymap ───────────────────────────────────────────────────────────────────
     keymap {
         compatible = "zmk,keymap";
 
+        // ══════════════════════════════════════════════════════════════════════
+        // 0 — Base (Mac)
+        // ══════════════════════════════════════════════════════════════════════
         Base_Mac {
             display-name = "Mac";
             bindings = <
@@ -149,6 +145,9 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+        // ══════════════════════════════════════════════════════════════════════
+        // 1 — Sym
+        // ══════════════════════════════════════════════════════════════════════
         Sym {
             display-name = "Sym";
             bindings = <
@@ -161,6 +160,9 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+        // ══════════════════════════════════════════════════════════════════════
+        // 2 — Nav / F-keys / BT
+        // ══════════════════════════════════════════════════════════════════════
         Nav {
             display-name = "Nav";
             bindings = <
@@ -173,6 +175,9 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+        // ══════════════════════════════════════════════════════════════════════
+        // 3 — Shortcuts
+        // ══════════════════════════════════════════════════════════════════════
         Shortcuts {
             display-name = "Shortcuts";
             bindings = <
@@ -185,30 +190,9 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
-        Meta {
-            display-name = "Meta";
-            bindings = <
-&trans          &trans     &trans     &trans     &trans     &trans     &mmv MOVE_UP     &trans                &trans     &trans         &trans       &kp LG(MINUS)  &trans
-&trans          &kp LG(Q)  &kp LG(W)  &kp LG(E)  &kp LG(R)  &kp LG(T)  &mmv MOVE_DOWN   &kp LG(Y)             &kp LG(U)  &kp LG(I)      &kp LG(O)    &kp LG(MINUS)  &trans
-&trans          &kp LG(A)  &kp LG(S)  &kp LG(D)  &kp LG(F)  &kp LG(G)  &mmv MOVE_LEFT   &kp LG(H)             &kp LG(J)  &kp LG(K)      &kp LG(L)    &kp LG(SEMI)   &trans
-&kp LEFT_SHIFT  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none      &mmv MOVE_RIGHT  &kp LG(N)             &kp LG(M)  &kp LG(COMMA)  &kp LG(DOT)  &kp LG(SLASH)  &kp RIGHT_SHIFT
-&trans          &trans     &trans     &trans     &kp SPACE  &none      &mkp LCLK        &kp LG(LS(NUMBER_4))  &mkp RCLK  &none          &trans       &trans
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        Vim {
-            display-name = "Vim";
-            bindings = <
-&trans  &trans          &trans  &trans  &trans  &trans  &mmv MOVE_UP     &trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &save_vim  &trans
-&trans  &trans          &trans  &trans  &trans  &trans  &mmv MOVE_DOWN   &trans  &trans          &trans           &trans         &trans     &trans
-&trans  &trans          &trans  &trans  &trans  &trans  &mmv MOVE_LEFT   &trans  &kp LA(LEFT)    &kp LA(UP)       &kp LA(RIGHT)  &trans     &trans
-&trans  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &mmv MOVE_RIGHT  &trans  &kp LA(LEFT)    &kp LA(DOWN)     &kp LA(RIGHT)  &trans     &trans
-&trans  &trans          &trans  &trans  &trans  &trans  &mkp LCLK        &trans  &mkp RCLK       &trans           &trans         &trans
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
-
+        // ══════════════════════════════════════════════════════════════════════
+        // 4 — Gaming  (Windows, no hold-taps)
+        // ══════════════════════════════════════════════════════════════════════
         Gaming {
             display-name = "Gaming";
             bindings = <
