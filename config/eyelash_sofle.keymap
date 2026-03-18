@@ -8,9 +8,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/rgb.h>
 
 // ─── Layer indices ────────────────────────────────────────────────────────────
+
 #define Base      0
 #define Sym       1
 #define Nav       2
@@ -18,29 +18,31 @@
 #define Gaming    4
 
 // ─── Pointing / scroll tuning (joystick) ──────────────────────────────────────
+
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
     acceleration-exponent = <1>;
-    time-to-max-speed-ms  = <100>;
-    delay-ms              = <0>;
+    time-to-max-speed-ms = <100>;
+    delay-ms = <0>;
 };
 
 &mmv {
-    time-to-max-speed-ms  = <500>;
+    time-to-max-speed-ms = <500>;
     acceleration-exponent = <1>;
-    trigger-period-ms     = <16>;
+    trigger-period-ms = <16>;
 };
 
 &soft_off { hold-time-ms = <2000>; };
 
 / {
     behaviors {
-
         kp_kp: kp_kp {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "tap-preferred";
@@ -50,6 +52,7 @@
         kp_sk: kp_sk {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&sk>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "balanced";
@@ -58,6 +61,7 @@
         sl_sk: sl_sk {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&sk>, <&sl>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
@@ -67,6 +71,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp Q>, <&alfred>;
+
             tapping-term-ms = <200>;
         };
 
@@ -78,12 +83,11 @@
     };
 
     macros {
-
         alfred: alfred {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <1>;
-            tap-ms  = <40>;
+            tap-ms = <40>;
             bindings = <&kp LEFT_GUI &kp LGUI>;
         };
 
@@ -91,7 +95,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <1>;
-            tap-ms  = <1>;
+            tap-ms = <1>;
             bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
         };
 
@@ -99,7 +103,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <1>;
-            tap-ms  = <1>;
+            tap-ms = <1>;
             bindings = <&kp LBKT &kp RBKT &kp LPAR &kp RPAR>;
         };
 
@@ -114,6 +118,7 @@
         compatible = "zmk,combos";
 
         // Q + S + Z held 2 s → deep sleep
+
         softoff {
             bindings = <&soft_off>;
             key-positions = <14 28 40>;
@@ -128,56 +133,60 @@
         //
         // Outer right col: row0=MINUS  row1=tog Gaming
         // ══════════════════════════════════════════════════════════════════════
+
         Base_Mac {
             display-name = "Mac";
             bindings = <
-&kp ESC                   &kp N1          &kp N2        &kp N3        &kp N4   &kp N5    &kp UP_ARROW    &kp N6    &kp N7    &kp N8    &kp N9           &kp N0               &kp MINUS
-&kp TAB                   &alfred_q       &clipboard_w  &kp E         &kp R    &kp T     &kp DOWN_ARROW  &kp Y     &kp U     &kp I     &kp_kp UNDER O   &kp_kp MINUS P       &tog Gaming
-&kp_sk LEFT_SHIFT ESCAPE  &kp_kp AT A     &kp S         &kp D         &kp F    &kp G     &kp LEFT_ARROW  &kp H     &kp J     &kp K     &kp L            &kp_kp PIPE SEMI     &kp APOS
-&kp LSHFT                 &kp_kp LCTRL Z  &kp X         &kp C         &kp V    &kp B     &kp RIGHT_ARROW &kp N     &kp M     &kp COMMA &kp DOT          &kp_kp QUESTION FSLH &sl_sk LEFT_SHIFT 3
-&trans                    &kp LCTRL       &kp LEFT_GUI  &kp LEFT_ALT  &mo Sym  &kp SPACE &mkp LCLK       &kp ENTER &kp BSPC  &mkp RCLK &mo Nav          &kp DEL
+&kp ESC                   &kp N1          &kp N2        &kp N3        &kp N4     &kp N5          &kp UP_ARROW     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
+&kp TAB                   &alfred_q       &clipboard_w  &kp E         &kp R      &kp T           &kp DOWN_ARROW   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog Gaming
+&kp_sk LEFT_SHIFT ESCAPE  &kp_kp AT A     &kp S         &kp D         &kp F      &kp G           &kp LEFT_ARROW   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &kp APOS
+&kp LSHFT                 &kp_kp LCTRL Z  &kp X         &kp C         &kp V      &kp B           &kp RIGHT_ARROW  &kp_kp N DOUBLE_QUOTES  &kp_kp M SQT  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
+&trans                    &mo 1           &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE  &kp LEFT_WIN    &mkp LCLK        &kp ENTER               &kp BSPC      &mkp RCLK  &mo Nav         &kp DEL
             >;
         };
 
         // ══════════════════════════════════════════════════════════════════════
         // 1 — Sym
         // ══════════════════════════════════════════════════════════════════════
+
         Sym {
             display-name = "Sym";
             bindings = <
-&kp GRAVE  &trans     &trans         &trans        &trans          &trans    &mmv MOVE_UP     &trans               &trans                &trans            &trans             &trans    &trans
-&trans     &kp GRAVE  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_BRACE  &kp RBRC  &mmv MOVE_DOWN   &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans    &trans
-&trans     &kp COLON  &kp DOLLAR     &kp PERCENT   &kp CARET       &kp PLUS  &mmv MOVE_LEFT   &kp LEFT_BRACKET     &kp LEFT              &kp UP_ARROW      &kp RIGHT          &none     &trans
-&trans     &kp TILDE  &kp EXCL       &kp AT        &kp HASH        &kp PIPE  &mmv MOVE_RIGHT  &kp DQT              &kp LEFT_ARROW        &kp DOWN_ARROW    &kp RIGHT          &kp BSLH  &trans
-&trans     &trans     &trans         &trans        &trans          &trans    &mkp LCLK        &trans               &trans                &mkp RCLK          &trans             &trans
+&kp GRAVE  &trans     &trans         &trans        &trans          &trans      &mmv MOVE_UP     &trans                &trans                 &trans            &trans             &trans    &trans
+&trans     &kp GRAVE  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_BRACE  &kp RBRC    &mmv MOVE_DOWN   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans    &trans
+&trans     &kp COLON  &kp DOLLAR     &kp PERCENT   &kp CARET       &kp PLUS    &mmv MOVE_LEFT   &kp LEFT_BRACKET      &kp LEFT               &kp UP_ARROW      &kp RIGHT          &none     &trans
+&trans     &kp TILDE  &kp EXCL       &kp AT        &kp HASH        &kp PIPE    &mmv MOVE_RIGHT  &kp DQT               &kp LEFT_ARROW         &kp DOWN_ARROW    &kp RIGHT          &kp BSLH  &trans
+&trans     &trans     &trans         &trans        &trans          &trans      &mkp LCLK        &trans                &trans                 &mkp RCLK         &trans             &trans
             >;
         };
 
         // ══════════════════════════════════════════════════════════════════════
         // 2 — Nav / F-keys / BT
         // ══════════════════════════════════════════════════════════════════════
+
         Nav {
             display-name = "Nav";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &mmv MOVE_UP     &kp F6       &kp F7    &kp F8     &kp F9     &kp F10      &trans
-&trans        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5      &mmv MOVE_DOWN   &kp PG_UP    &kp HOME  &kp UP     &kp END    &kp F11      &kp F12
-&trans        &out OUT_USB  &out OUT_BLE  &trans        &trans        &trans      &mmv MOVE_LEFT   &kp PG_DN    &kp LEFT  &kp DOWN   &kp RIGHT  &trans       &trans
-&trans        &sys_reset    &trans        &bootloader   &trans        &trans      &mmv MOVE_RIGHT  &trans       &trans    &sys_reset &soft_off  &bootloader  &trans
-&trans        &trans        &trans        &trans        &trans        &trans      &mkp LCLK        &trans       &trans    &mkp RCLK  &kp C_VOL_UP &kp C_MUTE
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &mmv MOVE_UP     &kp F6     &kp F7    &kp F8      &kp F9        &kp F10      &trans
+&trans        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &mmv MOVE_DOWN   &kp PG_UP  &kp HOME  &kp UP      &kp END       &kp F11      &kp F12
+&trans        &out OUT_USB  &out OUT_BLE  &trans        &trans        &trans        &mmv MOVE_LEFT   &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT     &trans       &trans
+&trans        &sys_reset    &trans        &bootloader   &trans        &trans        &mmv MOVE_RIGHT  &trans     &trans    &sys_reset  &soft_off     &bootloader  &trans
+&trans        &trans        &trans        &trans        &trans        &trans        &mkp LCLK        &trans     &trans    &mkp RCLK   &kp C_VOL_UP  &kp C_MUTE
             >;
         };
 
         // ══════════════════════════════════════════════════════════════════════
         // 3 — Shortcuts
         // ══════════════════════════════════════════════════════════════════════
+
         Shortcuts {
             display-name = "Shortcuts";
             bindings = <
-&trans  &trans         &trans         &trans         &trans         &trans     &mmv MOVE_UP     &trans                &trans         &trans         &trans         &trans     &trans
-&trans  &none          &none          &none          &none          &save_vim  &mmv MOVE_DOWN   &comment              &kp LG(LA(C))  &kp LC(LG(O))  &kp LA(ENTER)  &save_vim  &trans
-&trans  &kp LC(LG(S))  &none          &kp LG(LC(S))  &kp LS(LG(D))  &none      &mmv MOVE_LEFT   &link                 &kp LG(LC(F))  &kp LG(LC(K))  &kp LG(LC(G))  &none      &trans
-&trans  &kp LG(LC(Z))  &kp LG(LC(X))  &kp LG(LC(C))  &kp LG(D)      &none      &mmv MOVE_RIGHT  &kp LALT              &kp LG(LC(I))  &kp LC(LG(F))  &kp LC(LG(K))  &none      &alfred
-&trans  &trans         &trans         &trans         &none          &none      &mkp LCLK        &kp LS(LG(NUMBER_4))  &mkp RCLK      &none          &trans         &trans
+&trans  &trans         &trans         &trans         &trans         &trans       &mmv MOVE_UP     &trans                &trans         &trans         &trans         &trans     &trans
+&trans  &none          &none          &none          &none          &save_vim    &mmv MOVE_DOWN   &comment              &kp LG(LA(C))  &kp LC(LG(O))  &kp LA(ENTER)  &save_vim  &trans
+&trans  &kp LC(LG(S))  &none          &kp LG(LC(S))  &kp LS(LG(D))  &none        &mmv MOVE_LEFT   &link                 &kp LG(LC(F))  &kp LG(LC(K))  &kp LG(LC(G))  &none      &trans
+&trans  &kp LG(LC(Z))  &kp LG(LC(X))  &kp LG(LC(C))  &kp LG(D)      &none        &mmv MOVE_RIGHT  &kp LALT              &kp LG(LC(I))  &kp LC(LG(F))  &kp LC(LG(K))  &none      &alfred
+&trans  &trans         &trans         &trans         &none          &none        &mkp LCLK        &kp LS(LG(NUMBER_4))  &mkp RCLK      &none          &trans         &trans
             >;
         };
 
@@ -185,16 +194,16 @@
         // 4 — Gaming  (Windows, no hold-taps)
         // Toggle from Base: outer right col row1
         // ══════════════════════════════════════════════════════════════════════
+
         Gaming {
             display-name = "Gaming";
             bindings = <
-&kp ESC    &kp N1     &kp N2    &kp N3    &kp N4    &kp N5    &kp UP_ARROW    &kp N6    &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R     &kp T     &kp DOWN_ARROW  &kp Y     &kp U     &kp I      &kp O     &kp P     &tog Gaming
-&kp LSHFT  &kp A      &kp S     &kp D     &kp F     &kp G     &kp LEFT_ARROW  &kp H     &kp J     &kp K      &kp L     &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V     &kp B     &kp RIGHT_ARROW &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp ENTER
-&trans     &kp LCTRL  &kp LALT  &kp LALT  &mo Nav   &kp SPACE &mkp LCLK       &kp SPACE &mkp RCLK &mo Nav    &kp RSHFT &kp DEL
+&kp ESC    &kp N1     &kp N2    &kp N3    &kp N4   &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9     &kp N0    &kp MINUS
+&kp TAB    &kp Q      &kp W     &kp E     &kp R    &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O      &kp P     &tog Gaming
+&kp LSHFT  &kp A      &kp S     &kp D     &kp F    &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L      &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z      &kp X     &kp C     &kp V    &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH  &to 1
+&trans     &kp LCTRL  &kp LALT  &kp LALT  &mo Nav  &kp SPACE    &mkp LCLK        &kp SPACE  &mkp RCLK  &mo Nav    &kp RSHFT  &kp DEL
             >;
         };
-
     };
 };
