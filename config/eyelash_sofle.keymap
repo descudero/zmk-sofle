@@ -137,11 +137,11 @@
         Base_Mac {
             display-name = "Mac";
             bindings = <
-&kp ESC                   &kp N1          &kp N2        &kp N3        &kp N4     &kp N5          &kp UP_ARROW     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
-&kp TAB                   &alfred_q       &clipboard_w  &kp E         &kp R      &kp T           &kp DOWN_ARROW   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog Gaming
-&kp_sk LEFT_SHIFT ESCAPE  &kp_kp AT A     &kp S         &kp D         &kp F      &kp G           &kp LEFT_ARROW   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &kp APOS
-&kp LSHFT                 &kp_kp LCTRL Z  &kp X         &kp C         &kp V      &kp B           &kp RIGHT_ARROW  &kp_kp N DOUBLE_QUOTES  &kp_kp M SQT  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
-&trans                    &mo 1           &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE  &kp LEFT_WIN    &mkp LCLK        &kp ENTER               &kp BSPC      &mkp RCLK  &mo Nav         &kp DEL
+&kp ESC                   &kp N1          &kp N2            &kp N3        &kp N4     &kp N5          &kp UP_ARROW     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
+&kp TAB                   &alfred_q       &clipboard_w      &kp E         &kp R      &kp T           &kp DOWN_ARROW   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog Gaming
+&kp_sk LEFT_SHIFT ESCAPE  &kp_kp AT A     &kp S             &kp D         &kp F      &kp G           &kp LEFT_ARROW   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &kp APOS
+&kp LSHFT                 &kp_kp LCTRL Z  &kp X             &kp C         &kp V      &kp B           &kp RIGHT_ARROW  &kp_kp N DOUBLE_QUOTES  &kp_kp M SQT  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
+&trans                    &mo 1           &kp LEFT_CONTROL  &kp LEFT_ALT  &kp SPACE  &kp LEFT_WIN    &mkp LCLK        &kp ENTER               &kp BSPC      &mkp RCLK  &mo Nav         &kp DEL
             >;
         };
 
