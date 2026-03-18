@@ -1,0 +1,8 @@
+board:
+  name: eyelash_sofle_left
+  full_name: Eyelash Sofle Left
+  vendor: eyelashperipherals
+  socs:
+    - name: nrf52840
+      variants:
+        - name: zmk

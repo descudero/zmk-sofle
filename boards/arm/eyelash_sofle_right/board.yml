@@ -1,6 +1,6 @@
 board:
-  name: eyelash_sofle
-  full_name: Eyelash Sofle
+  name: eyelash_sofle_right
+  full_name: Eyelash Sofle Right
   vendor: eyelashperipherals
   socs:
     - name: nrf52840
