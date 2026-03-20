@@ -123,6 +123,11 @@
             bindings = <&soft_off>;
             key-positions = <14 28 40>;
         };
+
+        magic_tb {
+            bindings = <&kp TAB>;
+            key-positions = <18 31>;
+        };
     };
 
     keymap {
@@ -137,11 +142,11 @@
         Base_Mac {
             display-name = "Mac";
             bindings = <
-&kp TILDE  &kp N1          &kp N2            &kp N3        &kp N4     &kp N5          &mmv MOVE_UP     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
-&kp ESC    &alfred_q       &clipboard_w      &kp E         &kp R      &kp T           &mmv MOVE_DOWN   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog Gaming
-&kp TAB    &kp_kp AT A     &kp S             &kp D         &kp F      &kp G           &mmv MOVE_LEFT   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &kp APOS
-&kp LSHFT                 &kp_kp LCTRL Z  &kp X             &kp C         &kp V      &kp B           &mmv MOVE_RIGHT  &kp_kp DOUBLE_QUOTES N  &kp_kp SQT M  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
-&trans                    &mo 1           &kp LEFT_CONTROL  &kp LEFT_ALT  &kp SPACE  &kp LEFT_WIN    &mkp LCLK        &kp BSPC                &kp ENTER     &mkp RCLK  &mo Nav         &kp DEL
+&kp TILDE  &kp N1          &kp N2            &kp N3        &kp N4     &kp N5          &kp UP_ARROW     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
+&kp ESC    &alfred_q       &clipboard_w      &kp E         &kp R      &kp T           &kp DOWN_ARROW   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog Gaming
+&kp TAB    &kp_kp AT A     &kp S             &kp D         &kp F      &kp G           &kp LEFT_ARROW   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &kp APOS
+&kp LSHFT  &kp_kp LCTRL Z  &kp X             &kp C         &kp V      &kp B           &kp RIGHT_ARROW  &kp_kp DOUBLE_QUOTES N  &kp_kp SQT M  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
+&trans     &mo 1           &kp LEFT_CONTROL  &kp LEFT_ALT  &kp SPACE  &kp LEFT_WIN    &kp ENTER        &kp BSPC                &kp ENTER     &mkp RCLK  &mo Nav         &kp DEL
             >;
         };
 
@@ -198,13 +203,12 @@
         Gaming {
             display-name = "Gaming";
             bindings = <
-&kp TILDE  &kp N1          &kp N2          &kp N3        &kp N4     &kp N5           &mmv MOVE_UP     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
-&kp ESC    &alfred_q       &clipboard_w    &kp E         &kp R      &kp T            &mmv MOVE_DOWN   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog Gaming
-&kp TAB    &kp_kp AT A     &kp S           &kp D         &kp F      &kp G            &mmv MOVE_LEFT   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &kp APOS
-&kp LSHFT                 &kp_kp LCTRL Z  &kp X           &kp C         &kp V      &kp B            &mmv MOVE_RIGHT  &kp_kp DOUBLE_QUOTES N  &kp_kp SQT M  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
-&trans                    &mo 1           &kp LEFT_WIN    &kp LEFT_ALT  &kp SPACE  &kp LEFT_CONTROL &mkp LCLK        &kp BSPC                &kp ENTER     &mkp RCLK  &mo Nav         &kp DEL
+&kp TILDE  &kp N1          &kp N2        &kp N3        &kp N4     &kp N5              &mmv MOVE_UP     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
+&kp ESC    &alfred_q       &clipboard_w  &kp E         &kp R      &kp T               &mmv MOVE_DOWN   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog Gaming
+&kp TAB    &kp_kp AT A     &kp S         &kp D         &kp F      &kp G               &mmv MOVE_LEFT   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &kp APOS
+&kp LSHFT  &kp_kp LCTRL Z  &kp X         &kp C         &kp V      &kp B               &mmv MOVE_RIGHT  &kp_kp DOUBLE_QUOTES N  &kp_kp SQT M  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
+&trans     &mo 1           &kp LEFT_WIN  &kp LEFT_ALT  &kp SPACE  &kp LEFT_CONTROL    &mkp LCLK        &kp BSPC                &kp ENTER     &mkp RCLK  &mo Nav         &kp DEL
             >;
         };
-
     };
 };
