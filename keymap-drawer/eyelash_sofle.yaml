@@ -276,7 +276,7 @@ layers:
   - {t: '-', s: _}
   - $$mdi:keyboard-esc$$
   - '&alfred_q'
-  - '&clipboard_w'
+  - W
   - E
   - R
   - T
