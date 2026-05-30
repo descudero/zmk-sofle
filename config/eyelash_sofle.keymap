@@ -143,10 +143,10 @@
             display-name = "Mac";
             bindings = <
 &kp TILDE  &kp N1          &kp N2            &kp N3        &kp N4     &kp N5          &kp UP_ARROW     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
-&kp ESC    &alfred_q       &clipboard_w      &kp E         &kp R      &kp T           &kp DOWN_ARROW   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog Gaming
+&kp ESC    &alfred_q       &clipboard_w      &kp E         &kp R      &kp T           &kp DOWN_ARROW   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog 0
 &kp TAB    &kp_kp AT A     &kp S             &kp D         &kp F      &kp G           &kp LEFT_ARROW   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &mo 1
 &kp LSHFT  &kp_kp LCTRL Z  &kp X             &kp C         &kp V      &kp B           &kp RIGHT_ARROW  &kp_kp DOUBLE_QUOTES N  &kp_kp SQT M  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
-&trans     &mo 1           &kp LEFT_CONTROL  &kp LEFT_ALT  &kp SPACE  &kp LEFT_WIN    &kp ENTER        &kp BSPC                &kp ENTER     &mkp RCLK  &mo Nav         &kp DEL
+&trans     &mo 1           &kp LEFT_CONTROL  &kp LEFT_ALT  &kp SPACE  &kp LEFT_WIN    &kp ENTER        &kp BSPC                &kp ENTER     &mkp RCLK  &mo 2           &kp DEL
             >;
         };
 
@@ -157,11 +157,11 @@
         Sym {
             display-name = "Sym";
             bindings = <
-&kp GRAVE  &trans     &trans         &trans        &trans          &trans      &mmv MOVE_UP     &trans                &trans                 &trans            &trans             &trans    &trans
-&trans     &kp GRAVE  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_BRACE  &kp RBRC    &mmv MOVE_DOWN   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans    &trans
-&trans     &kp COLON  &kp DOLLAR     &kp PERCENT   &kp CARET       &kp PLUS    &mmv MOVE_LEFT   &kp LEFT_BRACKET      &kp LEFT               &kp UP_ARROW      &kp RIGHT          &none     &trans
-&trans     &kp TILDE  &kp EXCL       &kp AT        &kp HASH        &kp PIPE    &mmv MOVE_RIGHT  &kp EQUAL             &kp LEFT_ARROW         &kp DOWN_ARROW    &kp RIGHT          &kp BSLH  &trans
-&trans     &trans     &trans         &trans        &trans          &trans      &mkp LCLK        &trans                &trans                 &mkp RCLK         &trans             &trans
+&kp GRAVE  &kp EXCLAMATION  &kp AT_SIGN    &kp LS(POUND)  &kp LS(DLLR)    &kp LS(PRCNT)    &mmv MOVE_UP    &kp LS(CARET)         &kp LS(AMPS)           &kp LS(STAR)      &kp LS(LPAR)       &kp LS(RPAR)  &kp LS(UNDER)
+&trans     &kp GRAVE        &kp AMPERSAND  &kp ASTERISK   &kp LEFT_BRACE  &kp RBRC         &mmv MOVE_DOWN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp FSLH      &trans
+&trans     &kp COLON        &kp DOLLAR     &kp PERCENT    &kp LBKT        &kp RBKT         &mmv MOVE_LEFT  &kp LS(DQT)           &kp SQT                &kp UP_ARROW      &kp RIGHT          &kp LSHFT     &trans
+&trans     &kp TILDE        &kp EXCL       &kp AT         &kp LS(LPAR)    &kp LS(RPAR)     &kp LCTRL       &kp N0                &kp EQUAL              &kp LS(PLUS)      &kp MINUS          &kp BSLH      &trans
+&trans     &trans           &trans         &trans         &trans          &trans           &mkp LCLK       &trans                &trans                 &mkp RCLK         &trans             &trans
             >;
         };
 
@@ -187,11 +187,11 @@
         Shortcuts {
             display-name = "Shortcuts";
             bindings = <
-&trans  &trans         &trans         &trans         &trans         &trans       &mmv MOVE_UP     &trans                &trans         &trans         &trans         &trans     &trans
-&trans  &none          &none          &none          &none          &save_vim    &mmv MOVE_DOWN   &comment              &kp LG(LA(C))  &kp LC(LG(O))  &kp LA(ENTER)  &save_vim  &trans
-&trans  &kp LC(LG(S))  &none          &kp LG(LC(S))  &kp LS(LG(D))  &none        &mmv MOVE_LEFT   &link                 &kp LG(LC(F))  &kp LG(LC(K))  &kp LG(LC(G))  &none      &trans
-&trans  &kp LG(LC(Z))  &kp LG(LC(X))  &kp LG(LC(C))  &kp LG(D)      &none        &mmv MOVE_RIGHT  &kp LALT              &kp LG(LC(I))  &kp LC(LG(F))  &kp LC(LG(K))  &none      &alfred
-&trans  &trans         &trans         &trans         &none          &none        &mkp LCLK        &kp LS(LG(NUMBER_4))  &mkp RCLK      &none          &trans         &trans
+&trans  &trans         &trans         &trans         &trans         &trans    &mmv MOVE_UP     &trans                &trans         &trans         &trans         &trans     &trans
+&trans  &none          &none          &none          &none          &none     &mmv MOVE_DOWN   &comment              &kp LG(LA(C))  &kp LC(LG(O))  &kp LA(ENTER)  &save_vim  &trans
+&trans  &kp LC(LG(S))  &none          &kp LG(LC(S))  &kp LS(LG(D))  &none     &mmv MOVE_LEFT   &link                 &kp LG(LC(F))  &kp LG(LC(K))  &kp LG(LC(G))  &none      &trans
+&trans  &kp LG(LC(Z))  &kp LG(LC(X))  &kp LG(LC(C))  &kp LG(D)      &none     &mmv MOVE_RIGHT  &kp LALT              &kp LG(LC(I))  &kp LC(LG(F))  &kp LC(LG(K))  &none      &alfred
+&trans  &trans         &trans         &trans         &none          &none     &mkp LCLK        &kp LS(LG(NUMBER_4))  &mkp RCLK      &none          &trans         &trans
             >;
         };
 
@@ -199,16 +199,5 @@
         // 4 — Gaming  (Windows — Mac layout with Ctrl ↔ Win swapped)
         // Toggle from Base: outer right col row1
         // ══════════════════════════════════════════════════════════════════════
-
-        Gaming {
-            display-name = "Gaming";
-            bindings = <
-&kp TILDE  &kp N1          &kp N2        &kp N3        &kp N4     &kp N5              &mmv MOVE_UP     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
-&kp ESC    &alfred_q       &kp W         &kp E         &kp R      &kp T               &mmv MOVE_DOWN   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog Gaming
-&kp TAB    &kp_kp AT A     &kp S         &kp D         &kp F      &kp G               &mmv MOVE_LEFT   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &kp APOS
-&kp LSHFT  &kp_kp LCTRL Z  &kp X         &kp C         &kp V      &kp B               &mmv MOVE_RIGHT  &kp_kp DOUBLE_QUOTES N  &kp_kp SQT M  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
-&trans     &mo 1           &kp LEFT_WIN  &kp LEFT_ALT  &kp SPACE  &kp LEFT_CONTROL    &mkp LCLK        &kp BSPC                &kp ENTER     &mkp RCLK  &mo Nav         &kp DEL
-            >;
-        };
     };
 };
