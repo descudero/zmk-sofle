@@ -95,7 +95,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - ':'
   - $
-  - '%'
+  - Sft++
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
@@ -103,12 +103,12 @@ layers:
   - {t: '''', s: '"'}
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
-  - $$mdi:apple-keyboard-shift$$
-  - {type: held}
+  - Sft+?
+  - {t: 'Sft+?', type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - '~'
   - '!'
-  - '@'
+  - {t: '=', s: +}
   - Sft+(
   - Sft+)
   - $$mdi:apple-keyboard-control$$
