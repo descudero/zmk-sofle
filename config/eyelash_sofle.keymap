@@ -80,6 +80,15 @@
             #binding-cells = <0>;
             bindings = <&kp W>, <&kp LA(LG(C))>;
         };
+
+        // ~ single tap  -> &kp TILDE
+        // ~ double tap  -> &tog 4 (toggle Gaming layer; from Gaming, toggles it back off)
+        tilde_layer: tilde_layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE>, <&tog 4>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -142,7 +151,7 @@
         Base_Mac {
             display-name = "Mac";
             bindings = <
-&kp TILDE  &kp N1          &kp N2            &kp N3        &kp N4     &kp N5          &kp UP_ARROW     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
+&tilde_layer  &kp N1          &kp N2            &kp N3        &kp N4     &kp N5          &kp UP_ARROW     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
 &kp ESC    &alfred_q       &clipboard_w      &kp E         &kp R      &kp T           &kp DOWN_ARROW   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog 0
 &kp TAB    &kp A           &kp S             &kp D         &kp F      &kp G           &kp LEFT_ARROW   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &mo 1
 &kp LSHFT  &kp_kp LCTRL Z  &kp X             &kp C         &kp V      &kp B           &kp RIGHT_ARROW  &kp_kp DOUBLE_QUOTES N  &kp_kp SQT M  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
@@ -196,8 +205,21 @@
         };
 
         // ══════════════════════════════════════════════════════════════════════
-        // 4 — Gaming  (Windows — Mac layout with Ctrl ↔ Win swapped)
-        // Toggle from Base: outer right col row1
+        // 4 — Gaming  (Linux — Mac layout with Ctrl ↔ Win swapped)
+        // Toggle from/to Base: double-tap ~  (&tilde_layer)
+        // Thumb row: LEFT_CONTROL and LEFT_WIN positions are swapped so the
+        // "Mac-Cmd" thumb sends Ctrl and the Ctrl thumb sends Super.
         // ══════════════════════════════════════════════════════════════════════
+
+        Gaming {
+            display-name = "Gaming";
+            bindings = <
+&tilde_layer  &kp N1          &kp N2            &kp N3        &kp N4     &kp N5          &kp UP_ARROW     &kp N6                  &kp N7        &kp N8     &kp N9          &kp N0                &kp MINUS
+&kp ESC       &alfred_q       &clipboard_w      &kp E         &kp R      &kp T           &kp DOWN_ARROW   &kp Y                   &kp U         &kp I      &kp_kp UNDER O  &kp_kp MINUS P        &tog 0
+&kp TAB       &kp A           &kp S             &kp D         &kp F      &kp G           &kp LEFT_ARROW   &kp H                   &kp J         &kp K      &kp L           &kp_kp PIPE SEMI      &mo 1
+&kp LSHFT     &kp_kp LCTRL Z  &kp X             &kp C         &kp V      &kp B           &kp RIGHT_ARROW  &kp_kp DOUBLE_QUOTES N  &kp_kp SQT M  &kp COMMA  &kp DOT         &kp_kp QUESTION FSLH  &sl_sk LEFT_SHIFT 3
+&trans        &mo 1           &kp LEFT_WIN      &kp LEFT_ALT  &kp SPACE  &kp LEFT_CONTROL &kp ENTER        &kp BSPC                &kp ENTER     &mo 1      &mo 2           &kp DEL
+            >;
+        };
     };
 };
