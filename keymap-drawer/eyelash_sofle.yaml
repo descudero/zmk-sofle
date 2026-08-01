@@ -28,7 +28,7 @@ layers:
   - {t: P, h: '-'}
   - {t: Mac, h: toggle}
   - $$mdi:keyboard-tab$$
-  - {t: A, h: '@'}
+  - A
   - S
   - D
   - F
